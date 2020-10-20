@@ -1,4 +1,4 @@
-package sakilra.filter;
+package sakila.filter;
 
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -17,14 +17,10 @@ import javax.servlet.annotation.WebFilter;
 @WebFilter("/*")// /*모든요청에대한끼어들기 UTF-8
 public class EncodingFilter implements Filter {
 
-   
-    public EncodingFilter() {
-        // TODO Auto-generated constructor stub
+    public EncodingFilter() {  
     }
 
-
 	public void destroy() {
-		// TODO Auto-generated method stub
 	}
 
 

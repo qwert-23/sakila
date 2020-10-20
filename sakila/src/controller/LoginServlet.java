@@ -1,4 +1,4 @@
-package sakila.controller;
+package controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
 				return;
 			}
 			
-		request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 		
 		
 		
