@@ -8,7 +8,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-	<h1>로그인폼</h1>
+		
+		<div>
+				오늘 접속자 수 : ${stats.count}
+		
+		</div>
 	<form>
 		<div>
 			<input type = "text" placeholder="ID">
