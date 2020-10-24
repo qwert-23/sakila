@@ -8,18 +8,25 @@ import javax.servlet.annotation.WebListener;
 @WebListener
 public class DBListener implements ServletContextListener {
 
-    public DBListener() {
-        // TODO Auto-generated constructor stub
-    }
-
 	
     public void contextDestroyed(ServletContextEvent arg0)  { 
-         // TODO Auto-generated method stub
+        
     }
 
 
-    public void contextInitialized(ServletContextEvent arg0)  { 
-         // TODO Auto-generated method stub
+    public void contextInitialized(ServletContextEvent arg0)  { //시작시 호출
+       
+    	try {
+    		
+    		Class.forName("org.mariadb.jdbc.Driver");
+    		System.out.println("org.mariadb.jdbc.Driver 성공");
+    	}catch(Exception e){
+    		e.printStackTrace();
+    		System.out.println("org.mariadb.jdbc.Driver 실패");
+    		
+    	}
+    	
+    	
     }
 	
 }

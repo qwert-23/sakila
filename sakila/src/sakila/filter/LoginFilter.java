@@ -34,7 +34,7 @@ public class LoginFilter implements Filter {
 		System.out.println("LoginFilter 실행");
 		HttpSession session = httpRequest.getSession();
 
-		if(session.getAttribute("loginStaff") == null) {
+		if(session.getAttribute("loginStaff") == null) { 
 			httpResponse.sendRedirect(httpRequest.getContextPath() + "/LoginServlet");
 			return;
 
