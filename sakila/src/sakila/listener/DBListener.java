@@ -13,7 +13,7 @@ public class DBListener implements ServletContextListener {
     	
     }
     public void contextInitialized(ServletContextEvent arg0) { 
-    	System.out.println("DBListener/contextInitialized/debug : DBListener.contextInitialized() 실행"); // 디버그
+    	System.out.println("DBListener/contextInitialized=  DBListener.contextInitialized() 실행"); 
     	try {
     		Class.forName("org.mariadb.jdbc.Driver");
     		 

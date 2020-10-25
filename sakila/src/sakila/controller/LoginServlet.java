@@ -37,8 +37,8 @@ public class LoginServlet extends HttpServlet {
 		request.setAttribute("todayStats", map.get("todayStats"));
 		request.setAttribute("totalStats", map.get("totalStats"));
 		
-		System.out.println("LoginServlet/doGet/: todayStats=" + request.getAttribute("todayStats")); // 디버그
-		System.out.println("LoginServlet/doGet/: totalStats=" + request.getAttribute("totalStats")); // 디버그
+		System.out.println("LoginServlet/doGet/: todayStats=" + request.getAttribute("todayStats")); 
+		System.out.println("LoginServlet/doGet/: totalStats=" + request.getAttribute("totalStats")); 
 		
 		// 뷰로 포워딩
 		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 		String staffPassword = request.getParameter("password");
 		
 		System.out.println("LoginServlet/doPost/: staffEmail=" + staffEmail); 
-		System.out.println("LoginServlet/doPost/: staffPassword=" + staffPassword); 
+		System.out.println("LoginServlet/doPost/: staffPasswords=" + staffPassword); 
 		
 		staffService = new StaffService();
 		Staff staff = new Staff();

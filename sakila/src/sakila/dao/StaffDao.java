@@ -16,14 +16,15 @@ public class StaffDao {
 		stmt.setString(2, staff.getPassword());
 			
 		ResultSet rs = stmt.executeQuery();
-		System.out.println("StaffDao/selectStaffByKey/debug : rs=" + rs); // 디버그
-		System.out.println(staff.getEmail()+("이메일"));
+		System.out.println("StaffDao/selectStaffByKey rs=" + rs); 
+		System.out.println(("StaffDao/selectStaffByKey getEmail()")+staff.getEmail());
 		if(rs.next()) {
 			returnStaff = new Staff();
 			returnStaff.setEmail(rs.getString("email"));
 			returnStaff.setPassword(rs.getString("username"));
-			System.out.println("StaffDao/selectStaffByKey/debug : email=" + rs.getString("email")); // 디버그
-			System.out.println("StaffDao/selectStaffByKey/debug : username=" + rs.getString("username")); // 디버그
+			
+			System.out.println("StaffDao/selectStaffByKey email=" + rs.getString("email")); 
+			System.out.println("StaffDao/selectStaffByKey username=" + rs.getString("username")); 
 		}
 		
 		return returnStaff;
