@@ -1,9 +1,8 @@
 package sakila.vo;
 
 public class Stats {
-	private	String day; 
-	private long cnt;
-	
+	private String day;
+	private long count;
 	
 	public String getDay() {
 		return day;
@@ -11,15 +10,14 @@ public class Stats {
 	public void setDay(String day) {
 		this.day = day;
 	}
-	public long getCnt() {
-		return cnt;
+	public long getCount() {
+		return count;
 	}
-	public void setCnt(long cnt) {
-		this.cnt = cnt;
+	public void setCount(long count) {
+		this.count = count;
 	}
 	@Override
 	public String toString() {
-		return "stats [day=" + day + ", cnt=" + cnt + "]";
+		return "Stats [day=" + day + ", count=" + count + "]";
 	}
-	
 }

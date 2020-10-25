@@ -1,31 +1,30 @@
 package sakila.vo;
 
 public class Staff {
-	
+	// 11개의 필드
+	// toString 하기
 	private int staffId;
-	private String firstName;
+	private String fitstName;
 	private String lastName;
-	private String addressId;
+	private int adressId;
 	private String picture;
-	private String emall;
+	private String email;
 	private int storeId;
 	private int active;
-	private String username;
+	private String userName;
 	private String password;
 	private String lastUpdate;
-	
-	
 	public int getStaffId() {
 		return staffId;
 	}
 	public void setStaffId(int staffId) {
 		this.staffId = staffId;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getFitstName() {
+		return fitstName;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFitstName(String fitstName) {
+		this.fitstName = fitstName;
 	}
 	public String getLastName() {
 		return lastName;
@@ -33,11 +32,11 @@ public class Staff {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getAddressId() {
-		return addressId;
+	public int getAdressId() {
+		return adressId;
 	}
-	public void setAddressId(String addressId) {
-		this.addressId = addressId;
+	public void setAdressId(int adressId) {
+		this.adressId = adressId;
 	}
 	public String getPicture() {
 		return picture;
@@ -45,11 +44,11 @@ public class Staff {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-	public String getEmall() {
-		return emall;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmall(String emall) {
-		this.emall = emall;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public int getStoreId() {
 		return storeId;
@@ -63,11 +62,11 @@ public class Staff {
 	public void setActive(int active) {
 		this.active = active;
 	}
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getPassword() {
 		return password;
@@ -83,10 +82,12 @@ public class Staff {
 	}
 	@Override
 	public String toString() {
-		return "Staff [staffId=" + staffId + ", firstName=" + firstName + ", lastName=" + lastName + ", addressId="
-				+ addressId + ", picture=" + picture + ", emall=" + emall + ", storeId=" + storeId + ", active="
-				+ active + ", username=" + username + ", password=" + password + ", lastUpdate=" + lastUpdate + "]";
+		return "Staff [staffId=" + staffId + ", fitstName=" + fitstName + ", lastName=" + lastName + ", adressId="
+				+ adressId + ", picture=" + picture + ", email=" + email + ", storeId=" + storeId + ", active=" + active
+				+ ", userName=" + userName + ", password=" + password + ", lastUpdate=" + lastUpdate + "]";
 	}
 	
 	
+
+
 }

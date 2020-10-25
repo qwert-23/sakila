@@ -1,7 +1,11 @@
+
+
 package sakila.query;
 
+
+
 public class StaffQuery {
-	public final static String SELECT_STAF_BY_KEY=
-			"SELECT staff_id, username FORM staff WHERE staff_id=? AND password =?";
-	
-}
+	//  email , password 일치 시  email ,username  관리자 로그인
+	public final static String SELECT_STAFF_BY_KEY = "select staff_id, store_id, email, username from staff where email = ? and password = password(?)";
+
+	}

@@ -4,28 +4,28 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import sakila.query.*;
+import sakila.query.StaffQuery;
 import sakila.vo.Staff;
 
 public class StaffDao {
-	public Staff selectStaffByKey(Connection conn, Staff staff)throws Exception{
+	public Staff selectStaffByKey(Connection conn, Staff staff) throws Exception {
+		Staff returnStaff = null;
 		
-		Staff returnStaff =null;
-		
-		PreparedStatement stmt = conn.prepareStatement(StaffQuery.SELECT_STAF_BY_KEY);
-		stmt.setString(1, staff.getEmall());
+		PreparedStatement stmt = conn.prepareStatement(StaffQuery.SELECT_STAFF_BY_KEY);
+		stmt.setString(1, staff.getEmail());
 		stmt.setString(2, staff.getPassword());
-		
-		ResultSet rs = stmt.executeQuery();		
-		
-		if (rs.next()) {
-			returnStaff = new Staff();
-			returnStaff.setEmall(rs.getString("email"));
-			returnStaff.setUsername(rs.getString("username"));
 			
+		ResultSet rs = stmt.executeQuery();
+		System.out.println("StaffDao/selectStaffByKey/debug : rs=" + rs); // 디버그
+		System.out.println(staff.getEmail()+("이메일"));
+		if(rs.next()) {
+			returnStaff = new Staff();
+			returnStaff.setEmail(rs.getString("email"));
+			returnStaff.setPassword(rs.getString("username"));
+			System.out.println("StaffDao/selectStaffByKey/debug : email=" + rs.getString("email")); // 디버그
+			System.out.println("StaffDao/selectStaffByKey/debug : username=" + rs.getString("username")); // 디버그
 		}
 		
-	
-		return returnStaff;	
+		return returnStaff;
 	}
 }

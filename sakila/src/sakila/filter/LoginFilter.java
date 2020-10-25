@@ -1,8 +1,7 @@
 package sakila.filter;
 
-
-
 import java.io.IOException;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -15,35 +14,30 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-
-@WebFilter("/auth/*")
-
+@WebFilter("/auth/*") // EncodingFilter를 거쳐간 것들 중 auth에 포함
 public class LoginFilter implements Filter {
-    public LoginFilter() {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		System.out.println("LoginFilter 실행 : session 검사");
+		
+		HttpSession session = ((HttpServletRequest)request).getSession(); // 세션 가져오기
+		if(session.getAttribute("loginStaff") == null) { // 세션값이 없으면 로그인 페이지로 이동
+			System.out.println("로그인 후 접근");
+			((HttpServletResponse)response).sendRedirect(request.getServletContext().getContextPath()+"/LoginServlet");
+			return;
+		}
+		chain.doFilter(request, response);
+	}
 
+	public LoginFilter() {
+        
     }
 
 	public void destroy() {
-
-
+		
 	}
-
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {		
-		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		HttpServletResponse httpResponse = (HttpServletResponse) response;
-		System.out.println("LoginFilter 실행");
-		HttpSession session = httpRequest.getSession();
-
-		if(session.getAttribute("loginStaff") == null) { 
-			httpResponse.sendRedirect(httpRequest.getContextPath() + "/LoginServlet");
-			return;
-
-		}
-		chain.doFilter(request, response);
-
-	}
+	
 	public void init(FilterConfig fConfig) throws ServletException {
-
+		
 	}
 
 }
