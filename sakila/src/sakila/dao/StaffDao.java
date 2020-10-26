@@ -18,13 +18,14 @@ public class StaffDao {
 		ResultSet rs = stmt.executeQuery();
 		System.out.println("StaffDao/selectStaffByKey rs=" + rs); 
 		System.out.println(("StaffDao/selectStaffByKey getEmail()")+staff.getEmail());
+		
 		if(rs.next()) {
 			returnStaff = new Staff();
 			returnStaff.setEmail(rs.getString("email"));
 			returnStaff.setPassword(rs.getString("username"));
 			
-			System.out.println("StaffDao/selectStaffByKey email=" + rs.getString("email")); 
-			System.out.println("StaffDao/selectStaffByKey username=" + rs.getString("username")); 
+			System.out.println("StaffDao/selectStaffByKey email="    + rs.getString("email")); 
+			System.out.println("StaffDao/selectStaffByKey username="   + rs.getString("username")); 
 		}
 		
 		return returnStaff;

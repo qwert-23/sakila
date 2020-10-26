@@ -10,9 +10,11 @@ import sakila.dao.StatsDao;
 import sakila.util.DBUtil;
 import sakila.vo.Stats;
 
+
+// 방문자수 구하기
 public class StatsService {
 	private StatsDao statsDao;
-	// 방문자수 구하기
+	
 	public Stats getToday() { 
 		Calendar today = Calendar.getInstance();
 		SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
@@ -28,9 +30,10 @@ public class StatsService {
 		Map<String, Object> map = null;
 		map = new HashMap<String, Object>();
 		statsDao = new StatsDao();
+		
 		Connection conn = null;
 		try {
-			DBUtil dbUtil = new DBUtil(); 
+			DBUtil dbUtil = new DBUtil(); 	//DB
 			conn = dbUtil.getConnection();
 			conn.setAutoCommit(false); 
 			
@@ -85,12 +88,13 @@ public class StatsService {
 			conn.commit();
 		}catch (Exception e) {
 			try {
+				//예외 발생시 rollback();
 				conn.rollback();
 			}catch (SQLException e1){
 				e1.printStackTrace();
 			}
 			e.printStackTrace();
-		}finally {
+		}finally { // 무조건 실행
 			try {
 				conn.close();
 			}catch (SQLException e) {

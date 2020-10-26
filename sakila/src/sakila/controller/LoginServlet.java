@@ -37,6 +37,7 @@ public class LoginServlet extends HttpServlet {
 		request.setAttribute("todayStats", map.get("todayStats"));
 		request.setAttribute("totalStats", map.get("totalStats"));
 		
+		
 		System.out.println("LoginServlet/doGet/: todayStats=" + request.getAttribute("todayStats")); 
 		System.out.println("LoginServlet/doGet/: totalStats=" + request.getAttribute("totalStats")); 
 		
@@ -47,9 +48,12 @@ public class LoginServlet extends HttpServlet {
 	// 로그인 액션
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		
+		
+		
 		String staffEmail = request.getParameter("Email");
 		String staffPassword = request.getParameter("password");
 		
+		//받아왔는지 확인
 		System.out.println("LoginServlet/doPost/: staffEmail=" + staffEmail); 
 		System.out.println("LoginServlet/doPost/: staffPasswords=" + staffPassword); 
 		
