@@ -16,12 +16,12 @@
 		<table>
 			<tr>
 				<td>
-					<input type="text" name="id" >
+					<input type="text" name="Email" value="Mike.Hillyer@sakilastaff.com " >
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="password" name="password" >
+					<input type="password" name="password" value ="1234" >
 				</td>
 			</tr>
 			<tr>

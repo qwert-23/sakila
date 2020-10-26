@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 		staff.setEmail(staffEmail);
 		staff.setPassword(staffPassword);
 		
-		System.out.println("LoginServlet staff.getEmai=" + staff.getEmail());
+		System.out.println("LoginServlet staff.getEmail=" + staff.getEmail());
 		System.out.println("LoginServlet staff.getPassword=" + staff.getPassword()); 
 		
 		Staff returnStaff = staffService.getStaffByKey(staff);
