@@ -4,20 +4,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>login.jsp</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	
-	
-$(document).ready(function(){	
-	if ($('#Email') == null ){
+	// 공백 여부확인
+$(document).ready(function(){		//나중에실행
+$("#clickBtn").click(function(){			
+	if ($('#Email').val() == "" ){
 		alert('Emaill을 입력하세요')
 	
-	}else if($('#password') == null){
+	}else if($('#password').val() == ""){
 		alert('password를 입력하세요 ')
 	}   
 
 });
+
+});
+
+/*
+ 	value="Mike.Hillyer@sakilastaff.com "  
+ 		value ="1234" 
+ */
 
 </script>
 </head>
@@ -34,18 +42,19 @@ $(document).ready(function(){
 		<table>
 			<tr>
 				<td>
-					<input type="text" name="Email" value="Mike.Hillyer@sakilastaff.com " > 
+					<input type="text" name="Email" id="Email" > 
+		
 					<!-- 로그인 화면에 버튼만누르면 index 이동-->
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="password" name="password" value ="1234" >
+					<input type="password" name="password" id="password"  >
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<button type="submit" >Log-in</button>
+					<button type="submit" id = "clickBtn" >Log-in</button>
 				</td>
 			</tr>
 		</table>
