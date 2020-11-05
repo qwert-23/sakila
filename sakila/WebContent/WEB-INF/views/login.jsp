@@ -8,24 +8,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	
-	// 공백 여부확인
-$(document).ready(function(){		//나중에실행
-$("#clickBtn").click(function(){			
-	if ($('#Email').val() == "" ){
-		alert('Emaill을 입력하세요')
-	
-	}else if($('#password').val() == ""){
-		alert('password를 입력하세요 ')
-	}   
 
-});
 
-});
-
-/*
- 	value="Mike.Hillyer@sakilastaff.com "  
- 		value ="1234" 
- */
 
 </script>
 </head>
@@ -43,6 +27,7 @@ $("#clickBtn").click(function(){
 			<tr>
 				<td>
 					<input type="text" name="Email" id="Email" > 
+					<span id="eMsg" ></span>
 		
 					<!-- 로그인 화면에 버튼만누르면 index 이동-->
 				</td>
@@ -50,12 +35,16 @@ $("#clickBtn").click(function(){
 			<tr>
 				<td>
 					<input type="password" name="password" id="password"  >
+					<span  id = "pwMsg"></span>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<button type="submit" id = "clickBtn" >Log-in</button>
+					<button type="submit" id = "clickBtn" >로그인 </button>
 				</td>
+			
+
+				
 			</tr>
 		</table>
 	</form>
