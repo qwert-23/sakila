@@ -5,7 +5,7 @@ package sakila.vo;
 public class StaffInfo {
 
 	private int staffId;		
-	private String firstName;		
+	private String firstName;		//성
 	private String lastName;	
 	private String address;		
 	private String phone;		
